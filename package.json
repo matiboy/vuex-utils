@@ -2,7 +2,7 @@
   "name": "vuex-utils",
   "version": "1.0.0",
   "description": "Utils for Vuex common operations",
-  "main": "lib/library.js",
+  "main": "lib/index.js",
   "scripts": {
     "build": "webpack --env dev && webpack --env build && npm run test",
     "dev": "webpack --progress --colors --watch --env dev",
