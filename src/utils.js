@@ -105,3 +105,8 @@ export const makeTrueFalseModel = function (name) {
     }
   }
 }
+
+export const makeSetReset = (key, defaultValue) => combine(
+  [makeSetter, key, defaultValue],
+  [makeResetter, key, defaultValue]
+)

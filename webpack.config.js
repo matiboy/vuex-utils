@@ -10,7 +10,7 @@ let libraryName = 'library';
 let plugins = [], outputFile;
 
 if (env === 'build') {
-  plugins.push(new UglifyJsPlugin({ minimize: true }));
+  // plugins.push(new UglifyJsPlugin({ minimize: true }));
   outputFile = libraryName + '.min.js';
 } else {
   outputFile = libraryName + '.js';
@@ -19,7 +19,9 @@ if (env === 'build') {
 const config = {
   entry: {
     index: './src/index.js',
-    utils: './src/utils.js'
+    utils: './src/utils.js',
+    loading: './src/loading.js',
+    form: './src/form.js'
   },
   devtool: 'source-map',
   output: {
