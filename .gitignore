@@ -32,4 +32,11 @@ node_modules
 
 .DS_Store
 
-lib
+index.js
+index.js.map
+form.js
+form.js.map
+loading.js
+loading.js.map
+utils.js
+utils.js.map

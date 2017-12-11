@@ -25,7 +25,7 @@ const config = {
   },
   devtool: 'source-map',
   output: {
-    path: __dirname + '/lib',
+    path: __dirname,
     filename: '[name].js',
     library: libraryName,
     libraryTarget: 'umd',

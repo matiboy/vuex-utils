@@ -1,17 +1,13 @@
 {
   "name": "vuex-utils",
-  "version": "1.0.4",
+  "version": "1.0.7",
   "description": "Utils for Vuex common operations",
   "main": "index.js",
-  "files": [
-    "lib"
-  ],
   "scripts": {
     "build": "webpack --env dev && webpack --env build",
     "dev": "webpack --progress --colors --watch --env dev",
     "test": "mocha --require babel-core/register --colors ./test/*.spec.js",
-    "test:watch": "mocha --require babel-core/register --colors -w ./test/*.spec.js",
-    "publish": "npm run build && cd lib && npm publish"
+    "test:watch": "mocha --require babel-core/register --colors -w ./test/*.spec.js"
   },
   "repository": {
     "type": "git",
