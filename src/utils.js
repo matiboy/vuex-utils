@@ -83,9 +83,10 @@ export const combine = (...methods) => {
 
 export const combineFunction = (...methods) => {
   const {state, mutations} = combine(...methods)
+
   return {
     state: () => cloneDeep(state),
-    mutations: obj.mutations
+    mutations
   }
 }
 
