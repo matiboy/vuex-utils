@@ -1,6 +1,7 @@
 import capitalize from 'lodash/capitalize'
 import assignIn from 'lodash/assignIn'
 import isFunction from 'lodash/isFunction'
+import cloneDeep from 'lodash/cloneDeep'
 
 // Creates mutation and state for a key that can be set to true/false
 // mutations are <key>True and <key>False e.g. loadingTrue and loadingFalse
@@ -78,6 +79,14 @@ export const combine = (...methods) => {
     obj.mutations = assignIn(obj.mutations, mutations)
   })
   return obj
+}
+
+export const combineFunction = (...methods) => {
+  const {state, mutations} = combine(...methods)
+  return {
+    state: () => cloneDeep(state),
+    mutations: obj.mutations
+  }
 }
 
 export const makeModel = function (name) {

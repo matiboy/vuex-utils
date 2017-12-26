@@ -4,6 +4,7 @@ import {
   makeResetter,
   makeToggler,
   combine,
+  combineFunction,
   makeSetterModel,
   makeTrueFalseModel,
 } from './utils.js';
@@ -12,5 +13,6 @@ export {makeTrueFalse,
   makeResetter,
   makeToggler,
   combine,
+  combineFunction,
   makeSetterModel,
   makeTrueFalseModel};
