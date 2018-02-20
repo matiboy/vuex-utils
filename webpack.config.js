@@ -21,7 +21,8 @@ const config = {
     index: './src/index.js',
     utils: './src/utils.js',
     loading: './src/loading.js',
-    form: './src/form.js'
+    form: './src/form.js',
+    factories: './src/factories.js'
   },
   devtool: 'source-map',
   output: {

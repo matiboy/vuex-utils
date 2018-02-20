@@ -64,7 +64,7 @@ import {makeLoading} from 'vuex-utils/loading'
 
 const {state, mutations} = combineFunction(
   makeLoading,
-  [makeSetter, 'amount', 0]
+  [makeSetter, 'amount', 0] // or makeSetter('amount', 0) with makeSetter imported from 'vuex-utils/factories'
 )
 
 
@@ -83,3 +83,11 @@ State is now a method that returns a clone of the state object, as Vuex expects
 
 */
 ```
+
+## Changelog
+
+- add `makeSetReset` which combines a makeSetter and a makeResetter
+- add factories, visually more appealing than the previous array notation
+- start adding tests
+- include coverage
+- remove unused library spec file

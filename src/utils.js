@@ -44,19 +44,6 @@ export const makeResetter = (key, defaultValue = null) => ({
   }
 })
 
-export const callMutations = (key, ...methods) => ({
-  state: {},
-  mutations: {
-    [key]: () => {
-      // TODO This doesn't work because the "this" object isnt' what we expected
-      console.log(this)
-      methods.forEach(method => this.mutations[method]())
-    }
-  }
-})
-
-export const makeResetAll = (...methods) => callMutations('resetAll', ...methods)
-
 export const combine = (...methods) => {
   const obj = {
     state: {},
