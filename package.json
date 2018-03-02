@@ -1,6 +1,6 @@
 {
   "name": "vuex-utils",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "Utils for Vuex common operations",
   "main": "index.js",
   "scripts": {
