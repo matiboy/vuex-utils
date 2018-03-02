@@ -2,6 +2,7 @@ import capitalize from 'lodash/capitalize'
 import assignIn from 'lodash/assignIn'
 import isFunction from 'lodash/isFunction'
 import cloneDeep from 'lodash/cloneDeep'
+import findIndex from 'lodash/findIndex'
 
 // Creates mutation and state for a key that can be set to true/false
 // mutations are <key>True and <key>False e.g. loadingTrue and loadingFalse
@@ -41,6 +42,28 @@ export const makeResetter = (key, defaultValue = null) => ({
   },
   mutations: {
     [`reset${capitalize(key)}`]: (state) => (state[key] = defaultValue)
+  }
+})
+
+export const makeArray = (key, initialValue = []) => ({
+  state: {
+    [key]: initialValue
+  },
+  mutations: {
+    [`push${capitalize(key)}`]: (state, item) => {
+      state[key].push(item)
+    },
+    [`remove${capitalize(key)}`]: (state, predicate) => {
+      let comparison = predicate
+      if (!isFunction(comparison)) {
+        comparison = x => x === predicate
+      }
+      const index = findIndex(state[key], comparison)
+      state[key].splice(index, 1)
+    },
+    [`clear${capitalize(key)}`]: (state) => {
+      state[key].splice(0, state[key].length)
+    }
   }
 })
 

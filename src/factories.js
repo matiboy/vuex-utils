@@ -10,6 +10,7 @@ export const makeSetReset = funcToArray(utils.makeSetReset)
 export const makeSetter = funcToArray(utils.makeSetter)
 export const makeResetter = funcToArray(utils.makeResetter)
 export const makeToggler = funcToArray(utils.makeToggler)
+export const makeArray = funcToArray(utils.makeArray)
 
 // Form
 export const makeDisplayablePassword = funcToArray(form.makeDisplayablePassword)
