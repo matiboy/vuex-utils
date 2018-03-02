@@ -86,8 +86,5 @@ State is now a method that returns a clone of the state object, as Vuex expects
 
 ## Changelog
 
-- add `makeSetReset` which combines a makeSetter and a makeResetter
-- add factories, visually more appealing than the previous array notation
-- start adding tests
-- include coverage
-- remove unused library spec file
+- add `makeArray` to handle arrays in state and basic mutations for adding, removing and clearing array (mutating)
+- new collaborator, thank you [@clive07](https://github.com/clive107)
