@@ -1,6 +1,7 @@
 import capitalize from 'lodash/capitalize'
 import assignIn from 'lodash/assignIn'
 import isFunction from 'lodash/isFunction'
+import isArray from 'lodash/isArray'
 import cloneDeep from 'lodash/cloneDeep'
 import findIndex from 'lodash/findIndex'
 
@@ -50,8 +51,12 @@ export const makeArray = (key, initialValue = []) => ({
     [key]: initialValue
   },
   mutations: {
-    [`push${capitalize(key)}`]: (state, item) => {
-      state[key].push(item)
+    [`push${capitalize(key)}`]: (state, items) => {
+      if (!isArray(items)) {
+        state[key].push(items)
+      } else {
+        state[key].splice(state[key].length, 0, ...items)        
+      }
     },
     [`remove${capitalize(key)}`]: (state, predicate) => {
       let comparison = predicate
