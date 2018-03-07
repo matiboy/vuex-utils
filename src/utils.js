@@ -50,8 +50,8 @@ export const makeArray = (key, initialValue = []) => ({
     [key]: initialValue
   },
   mutations: {
-    [`push${capitalize(key)}`]: (state, item) => {
-      state[key].push(item)
+    [`push${capitalize(key)}`]: (state, ...items) => {
+      state[key].splice(state[key].length, 0, ...items)        
     },
     [`remove${capitalize(key)}`]: (state, predicate) => {
       let comparison = predicate

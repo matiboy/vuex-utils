@@ -26,6 +26,23 @@ describe('Utils', () => {
         mutations.pushItems(state, 4)
         expect(state.items).to.contain(4)
       })
+      it('should able to add multiple items to an array', () => {
+        const { state, mutations } = makeArray('items', [1, 2, 3])
+        mutations.pushItems(state, 4, 5, 6)
+        expect(state.items).to.have.length(6)        
+      })
+      it('should able to add multiple items to an array', () => {
+        const { state, mutations } = makeArray('items', [
+          {id: 1, name: 'abc'}, {id: 2, name: 'def'}, {id: 3, name: 'efg'}
+        ])
+        mutations.pushItems(state, {id: 4, name: 'abc'}, {id: 5, name: 'def'})
+        expect(state.items).to.have.length(5)        
+      })
+      it('should able to add multiple items to an array', () => {
+        const { state, mutations } = makeArray('items', [[1, 2], [2, 3], [3, 4]])
+        mutations.pushItems(state, [4, 5])
+        expect(state.items).to.have.length(4)        
+      })
       it('should able to remove an item to the array', () => {
         const { state, mutations } = makeArray('items', [1, 2, 3])
         mutations.removeItems(state, 1)
