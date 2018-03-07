@@ -55,10 +55,12 @@ export const makeArray = (key, initialValue = []) => ({
     },
     [`remove${capitalize(key)}`]: (state, predicate) => {
       let comparison = predicate
+
       if (!isFunction(comparison)) {
         comparison = x => x === predicate
       }
       const index = findIndex(state[key], comparison)
+
       state[key].splice(index, 1)
     },
     [`clear${capitalize(key)}`]: (state) => {
